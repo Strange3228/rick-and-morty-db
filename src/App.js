@@ -4,6 +4,8 @@ import GlobalStyles from "./components/GlobalStyles";
 import Characters from "./pages/Characters";
 import Home from "./pages/Home";
 import Episodes from "./pages/Episodes";
+//Components
+import Nav from "./components/Nav";
 //Router
 import { Routes, Route, useLocation } from "react-router-dom";
 //Animation
@@ -15,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles />
+      <Nav />
       <AnimatePresence
         exitBeforeEnter
         onExitComplete={() => {

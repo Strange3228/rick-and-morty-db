@@ -16,6 +16,7 @@ const Home = () => {
   }, [dispatch]);
   //Get data back
   const { characters } = useSelector((state) => state.data);
+  console.log(characters);
 
   return (
     <ItemList>
