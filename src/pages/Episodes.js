@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
-import { loadData } from "../actions/dataActions";
+import { loadData } from "../actions/dataAction";
 //Styling and cnimations
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -27,7 +27,6 @@ const Episodes = () => {
             id={item.id}
             key={item.id}
             airDate={item.air_date}
-            episode={item.episode}
             name={item.name}
           />
         ))}
