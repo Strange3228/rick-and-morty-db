@@ -8,19 +8,25 @@ import { motion } from "framer-motion";
 import { ItemList, Items } from "../styles";
 //Components
 import Character from "../components/Character";
+import CharacterDetails from "../components/CharacterDetails";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  //Get current location
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
+  //Fetch data
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadData());
   }, [dispatch]);
   //Get data back
   const { characters } = useSelector((state) => state.data);
-  console.log(characters);
 
   return (
     <ItemList>
       <h2>Characters</h2>
+      {pathId && <CharacterDetails />}
       <Items>
         {characters.map((item) => (
           <Character

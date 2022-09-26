@@ -1,4 +1,4 @@
-const initState = { details: {} };
+const initState = { details: {}, isLoading: true };
 
 const detailsReducer = (state = initState, action) => {
   switch (action.type) {
@@ -6,6 +6,12 @@ const detailsReducer = (state = initState, action) => {
       return {
         ...state,
         details: action.payload.details,
+        isLoading: false,
+      };
+    case "LOADING_DETAIL":
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return { ...state };

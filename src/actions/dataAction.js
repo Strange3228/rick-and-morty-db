@@ -7,7 +7,7 @@ export const loadData = () => async (dispatch) => {
   //Fetch axios
   const characters = await axios.get(charactersUrl());
   const locations = await axios.get(locationsUrl());
-  const episodes = await axios.get(episodesUrl());
+  const episodes = await axios.get(episodesUrl(1));
   dispatch({
     type: "FETCH_DATA",
     payload: {

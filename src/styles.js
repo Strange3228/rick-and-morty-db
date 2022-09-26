@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const ItemList = styled(motion.div)`
   max-width: 1520px;
@@ -20,7 +21,7 @@ export const Items = styled(motion.div)`
   row-gap: 3rem;
 `;
 
-export const CharacterCard = styled(motion.div)`
+export const CharacterCard = styled(Link)`
   display: flex;
   align-items: center;
   column-gap: 2rem;
