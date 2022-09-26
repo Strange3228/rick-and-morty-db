@@ -9,7 +9,6 @@ import Nav from "./components/Nav";
 //Router
 import { Routes, Route, useLocation } from "react-router-dom";
 //Animation
-import { AnimatePresence } from "framer-motion";
 import Locations from "./pages/Locations";
 
 function App() {

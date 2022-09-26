@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { loadData } from "../actions/dataAction";
-//Styling and cnimations
-import styled from "styled-components";
-import { motion } from "framer-motion";
+//Styling and animations
+import { AnimatePresence } from "framer-motion";
 import { ItemList, Items } from "../styles";
 //Components
 import Character from "../components/Character";
@@ -26,7 +25,9 @@ const Home = () => {
   return (
     <ItemList>
       <h2>Characters</h2>
-      {pathId && <CharacterDetails />}
+      <AnimatePresence>
+        {pathId && <CharacterDetails pathId={pathId} />}
+      </AnimatePresence>
       <Items>
         {characters.map((item) => (
           <Character

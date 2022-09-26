@@ -21,7 +21,7 @@ export const Items = styled(motion.div)`
   row-gap: 3rem;
 `;
 
-export const CharacterCard = styled(Link)`
+export const CharacterCard = styled(motion.div)`
   display: flex;
   align-items: center;
   column-gap: 2rem;
@@ -42,5 +42,26 @@ export const CharacterCard = styled(Link)`
   img {
     width: 100%;
     border-radius: 50%;
+  }
+  &:hover {
+    animation: shake 0.3s ease forwards;
+  }
+  pointer-events: none;
+  &.allow_events {
+    pointer-events: all;
+  }
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    20% {
+      transform: rotate(5deg);
+    }
+    60% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
   }
 `;

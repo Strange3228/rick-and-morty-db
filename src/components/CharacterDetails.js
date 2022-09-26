@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
-import { loadData } from "../actions/dataAction";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const CharacterDetails = () => {
+const CharacterDetails = ({ pathId }) => {
   const { details, isLoading } = useSelector((state) => state.details);
   const navigate = useNavigate();
   //Close Details
@@ -16,12 +15,11 @@ const CharacterDetails = () => {
       navigate("/characters");
     }
   };
-
   return (
     <>
       {!isLoading && (
         <DetailsShadow className="shadow" onClick={closeDetailsHandler}>
-          <DetailsWrapp>
+          <DetailsWrapp layoutId={pathId}>
             <div className="details__image">
               <img src={details.image} alt={details.name} />
             </div>
@@ -69,9 +67,9 @@ const DetailsWrapp = styled(motion.div)`
     padding: 2rem 0;
   }
   h2 {
-    color: #a36678;
-    margin-bottom: 2rem;
-    text-align: left;
+    color: #a36678 !important;
+    margin-bottom: 2rem !important;
+    text-align: left !important;
   }
   p {
     margin-bottom: 0.3rem;
