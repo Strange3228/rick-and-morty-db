@@ -5,6 +5,7 @@ import { loadDetails } from "../actions/detailsAction";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { slide } from "../animations";
 
 const Character = ({ id, name, imageUrl }) => {
   const charCard = useRef(null);
@@ -22,22 +23,20 @@ const Character = ({ id, name, imageUrl }) => {
   }, []);
 
   return (
-    <>
-      <Link to={`/characters/${id}`}>
-        <CharacterCard
-          ref={charCard}
-          layoutId={StringPathId}
-          onClick={loadDetailsHandler}
-        >
-          <div className="">
-            <img src={imageUrl} alt={name} />
-          </div>
-          <div>
-            <h1>{name}</h1>
-          </div>
-        </CharacterCard>
-      </Link>
-    </>
+    <Link to={`/characters/${id}`}>
+      <CharacterCard
+        ref={charCard}
+        layoutId={StringPathId}
+        onClick={loadDetailsHandler}
+      >
+        <div className="">
+          <img src={imageUrl} alt={name} />
+        </div>
+        <div>
+          <h1>{name}</h1>
+        </div>
+      </CharacterCard>
+    </Link>
   );
 };
 

@@ -1,5 +1,6 @@
 const initState = {
   characters: [],
+  charactersPages: 1,
   locations: [],
   episodes: [],
 };
@@ -10,6 +11,7 @@ const dataReducer = (state = initState, action) => {
       return {
         ...state,
         characters: action.payload.characters,
+        charactersPages: action.payload.charactersPages,
         locations: action.payload.locations,
         episodes: action.payload.episodes,
       };

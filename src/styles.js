@@ -32,6 +32,7 @@ export const CharacterCard = styled(motion.div)`
   -webkit-box-shadow: -2px 12px 23px -13px rgba(95, 95, 95, 1);
   -moz-box-shadow: -2px 12px 23px -13px rgba(95, 95, 95, 1);
   box-shadow: -2px 12px 23px -13px rgba(95, 95, 95, 1);
+  height: 100%;
   h1 {
     color: white;
     font-size: 1.5rem;
