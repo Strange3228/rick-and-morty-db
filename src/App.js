@@ -19,8 +19,8 @@ function App() {
       <Nav />
       <Routes location={location} key={location.pathname}>
         <Route path="/" exact element={<Home />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/characters/:id" element={<Characters />} />
+        <Route path="/characters/:page" element={<Characters />} />
+        <Route path="/characters/:page/:id" element={<Characters />} />
         <Route path="/episodes" exact element={<Episodes />} />
         <Route path="/locations" exact element={<Locations />} />
       </Routes>

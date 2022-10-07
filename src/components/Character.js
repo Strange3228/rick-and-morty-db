@@ -2,17 +2,13 @@ import React, { useRef, useEffect } from "react";
 import { CharacterCard } from "../styles";
 import { useDispatch } from "react-redux";
 import { loadDetails } from "../actions/detailsAction";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { slide } from "../animations";
 
-const Character = ({ id, name, imageUrl }) => {
+const Character = ({ id, name, imageUrl, page }) => {
   const charCard = useRef(null);
   const StringPathId = id.toString();
   //Load details
   const dispatch = useDispatch();
-
   const loadDetailsHandler = () => {
     document.body.style.overflow = "hidden";
     dispatch(loadDetails("character", id));
@@ -23,7 +19,7 @@ const Character = ({ id, name, imageUrl }) => {
   }, []);
 
   return (
-    <Link to={`/characters/${id}`}>
+    <Link to={`/characters/${page}/${id}`}>
       <CharacterCard
         ref={charCard}
         layoutId={StringPathId}

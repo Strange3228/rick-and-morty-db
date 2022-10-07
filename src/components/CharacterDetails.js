@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const CharacterDetails = ({ pathId }) => {
+const CharacterDetails = ({ pathId, page }) => {
   const { details, isLoading } = useSelector((state) => state.details);
   const navigate = useNavigate();
   //Close Details
@@ -12,7 +12,7 @@ const CharacterDetails = ({ pathId }) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
       document.body.style.overflow = "auto";
-      navigate("/characters");
+      navigate(`/characters/${page}`);
     }
   };
   return (

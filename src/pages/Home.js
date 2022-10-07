@@ -16,7 +16,7 @@ const Home = () => {
     <HomeContainer>
       <MainLinks>
         <div className="link--characters">
-          <LinkStyled to="/characters">Characters</LinkStyled>
+          <LinkStyled to="/characters/1">Characters</LinkStyled>
         </div>
         <div className="link--episodes">
           <LinkStyled to="/episodes">Episodes</LinkStyled>

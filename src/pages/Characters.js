@@ -11,12 +11,13 @@ import CharacterDetails from "../components/CharacterDetails";
 import { useLocation } from "react-router-dom";
 import Pagination from "../components/Pagination";
 
-const Home = () => {
-  //States
-  const [page, setPage] = useState(1);
+const Characters = () => {
   //Get current location
   const location = useLocation();
-  const pathId = location.pathname.split("/")[2];
+  const pathId = location.pathname.split("/")[3];
+  const pageNumb = location.pathname.split("/")[2];
+  //States
+  const [page, setPage] = useState(pageNumb);
   //Fetch data
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,12 +25,12 @@ const Home = () => {
   }, [dispatch, page]);
   //Get data back
   const { characters, charactersPages } = useSelector((state) => state.data);
-  console.log(characters);
+  console.log(pageNumb);
   return (
     <ItemList>
       <h2>Characters</h2>
       <AnimatePresence>
-        {pathId && <CharacterDetails pathId={pathId} />}
+        {pathId && pageNumb && <CharacterDetails pathId={pathId} page={page} />}
       </AnimatePresence>
       <Items>
         {characters.map((item) => (
@@ -38,6 +39,7 @@ const Home = () => {
             key={item.id}
             name={item.name}
             imageUrl={item.image}
+            page={page}
           />
         ))}
       </Items>
@@ -50,4 +52,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Characters;
