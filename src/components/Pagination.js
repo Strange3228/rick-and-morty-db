@@ -27,6 +27,22 @@ const Pagination = ({ charactersPages, page, setPage }) => {
           <img src={rightIcon} alt="Next page" />
         </PaginationBtn>
       )}
+      <PageProgress>
+        {(() => {
+          let blocks = [];
+          for (let i = 1; i <= charactersPages; i++) {
+            blocks.push(
+              <PageLink
+                to={`/characters/${i}`}
+                onClick={() => setPage(i)}
+                key={i}
+                className={i <= page ? "active" : ""}
+              ></PageLink>
+            );
+          }
+          return blocks;
+        })()}
+      </PageProgress>
     </>
   );
 };
@@ -65,5 +81,29 @@ const PaginationBtn = styled(Link)`
   img {
     height: 80%;
     object-fit: contain;
+  }
+`;
+const PageProgress = styled.div`
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 3rem;
+  background-color: rgb(83, 128, 126);
+`;
+const PageLink = styled(Link)`
+  height: 2rem;
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease;
+  background-color: rgba(22, 59, 58, 0);
+  &.active {
+    background-color: rgb(22, 59, 58);
+    &::before {
+      width: 100%;
+    }
   }
 `;
