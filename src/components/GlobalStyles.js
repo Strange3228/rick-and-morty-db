@@ -17,6 +17,17 @@ const GlobalStyles = createGlobalStyle`
     body{
         background-color: #85cdca;
         font-family: 'Lato', sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+    .App{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        &>div{
+            width: 100%;
+        }
     }
     h2{
         font-size: 3rem;

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Episodes from "./pages/Episodes";
 //Components
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 //Router
 import { Routes, Route, useLocation } from "react-router-dom";
 //Animation
@@ -24,6 +25,7 @@ function App() {
         <Route path="/episodes" exact element={<Episodes />} />
         <Route path="/locations" exact element={<Locations />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

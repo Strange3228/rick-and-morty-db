@@ -11,7 +11,6 @@ import rickHeads from "../img/rick-heads.png";
 import rickHanging from "../img/rick-hanging.png";
 
 const Home = () => {
-  console.log(charactersImg);
   return (
     <HomeContainer>
       <MainLinks>

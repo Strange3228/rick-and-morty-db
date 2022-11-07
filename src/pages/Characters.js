@@ -25,7 +25,6 @@ const Characters = () => {
   }, [dispatch, page]);
   //Get data back
   const { characters, charactersPages } = useSelector((state) => state.data);
-  console.log(pageNumb);
   return (
     <ItemList>
       <h2>Characters</h2>
